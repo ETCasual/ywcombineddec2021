@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# type-check and lint
+cd packages/marketplace
+yarn lint-staged
+
+cd ../dashboard
+yarn lint
+
+cd ../shared
+yarn lint
