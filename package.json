@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore"
   },
   "dependencies": {
     "blobity": "^0.1.7",
