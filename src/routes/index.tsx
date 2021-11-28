@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
 import { FirestoreProvider, useFirebaseApp } from 'reactfire';
 
-import { IntroRoute } from '@/features/intro';
+import { Intro } from '@/features/intro/routes/Intro';
 
 const App: React.FC = () => {
   const firestoreInstance = getFirestore(useFirebaseApp());
@@ -20,7 +20,7 @@ export const AppRoutes: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/intro/*" element={<IntroRoute />} />
+          <Route path="/" element={<Intro />} />
         </Route>
       </Routes>
     </BrowserRouter>
