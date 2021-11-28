@@ -1,11 +1,12 @@
 import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import Loader from 'react-loader-spinner';
-
-import { CloseSquare } from '@/icons/CloseSquare';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import { FirebaseAppProvider } from 'reactfire';
 
-// TODO: Customize this ErrorFallback
+import { firebaseConfig } from '@/config/constants';
+import { CloseSquare } from '@/icons/CloseSquare';
+
 const ErrorFallback: React.FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-primary">
@@ -35,7 +36,9 @@ const ErrorFallback: React.FC<FallbackProps> = ({ error, resetErrorBoundary }) =
 export const AppProvider: React.FC = ({ children }) => {
   return (
     <React.Suspense fallback={<Loader type="Audio" color="#00BFFF" height={80} width={80} />}>
-      <ErrorBoundary FallbackComponent={ErrorFallback}>{children}</ErrorBoundary>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <FirebaseAppProvider firebaseConfig={firebaseConfig}>{children}</FirebaseAppProvider>
+      </ErrorBoundary>
     </React.Suspense>
   );
 };
