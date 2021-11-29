@@ -1,16 +1,22 @@
+import { getDatabase } from 'firebase/database';
 import { getFirestore } from 'firebase/firestore';
 import React from 'react';
 import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
-import { FirestoreProvider, useFirebaseApp } from 'reactfire';
+import { DatabaseProvider, FirestoreProvider, useFirebaseApp } from 'reactfire';
 
-import { Intro } from '@/features/intro/routes/Intro';
+import { Game } from '@/features/intro/routes/Game';
 
 const App: React.FC = () => {
-  const firestoreInstance = getFirestore(useFirebaseApp());
+  const app = useFirebaseApp();
+
+  const firestoreInstance = getFirestore(app);
+  const database = getDatabase(app);
 
   return (
     <FirestoreProvider sdk={firestoreInstance}>
-      <Outlet />
+      <DatabaseProvider sdk={database}>
+        <Outlet />
+      </DatabaseProvider>
     </FirestoreProvider>
   );
 };
@@ -20,7 +26,7 @@ export const AppRoutes: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/" element={<Intro />} />
+          <Route path="/" element={<Game />} />
         </Route>
       </Routes>
     </BrowserRouter>

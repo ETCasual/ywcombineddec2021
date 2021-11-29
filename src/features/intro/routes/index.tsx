@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { Intro } from './Intro';
+import { Game } from './Game';
 
 export const IntroRoute: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<Intro />} />
+      <Route path="/" element={<Game />} />
     </Routes>
   );
 };

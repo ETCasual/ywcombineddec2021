@@ -1,7 +1,7 @@
 export const firebaseConfig = {
   apiKey: 'AIzaSyBcZ6nh7B3PHTKKNCh-H3XM3Rnue5xfGE0',
   authDomain: 'yw-combined-game.firebaseapp.com',
-  databaseURL: 'https://yw-combined-game-default-rtdb.asia-southeast1.firebasedatabase.app',
+  databaseURL: 'https://yw-combined-game.firebaseio.com',
   projectId: 'yw-combined-game',
   storageBucket: 'yw-combined-game.appspot.com',
   messagingSenderId: '297446907123',

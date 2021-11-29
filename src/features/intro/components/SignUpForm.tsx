@@ -38,7 +38,7 @@ export const SignUpForm: React.FC = () => {
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-                <Loader type="TailSpin" height="32px" width="32px" />
+                <Loader type="TailSpin" height="32px" width="32px" color="#30ffff" />
               ) : (
                 <BsArrowRight className="w-8 h-8" />
               )}
