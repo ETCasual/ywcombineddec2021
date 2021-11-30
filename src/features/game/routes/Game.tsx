@@ -26,7 +26,7 @@ export const Game: React.FC = () => {
   const adminAccess = () => {
     const pw = prompt('Password');
 
-    if (pw === 'douglas2021') navigate('/admin');
+    pw === 'douglas2021' ? navigate('/admin') : alert('Wrong Password');
   };
 
   if (status === 'error') throw new Error('Please Enstablish a Secure Connection');
