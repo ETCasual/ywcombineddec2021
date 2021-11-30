@@ -18,19 +18,19 @@ export const Game: React.FC = () => {
   const { user } = useGame();
   const dbRef = useDatabase();
 
-  const gameRef = ref(dbRef, '/');
-  const { status, data } = useDatabaseObjectData<DataType>(gameRef);
+  const gameRef = ref(dbRef, '/gameNo');
+  const { status, data } = useDatabaseObjectData<number>(gameRef);
 
   if (status === 'error') throw new Error('Please Enstablish a Secure Connection');
 
   return status === 'success' ? (
     <>
-      {data.gameNo !== 8 ? (
+      {data !== 8 ? (
         <VideoBG>
           {user.name == undefined ? (
             <SignUpForm />
-          ) : data.gameNo ? (
-            <GameComp gameNo={data.gameNo} />
+          ) : data ? (
+            <GameComp gameNo={data} />
           ) : (
             <Waiting />
           )}

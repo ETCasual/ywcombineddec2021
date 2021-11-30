@@ -133,6 +133,7 @@ enum AnsweredState {
 }
 
 export const GameComp: React.FC<DataType> = ({ gameNo }) => {
+  // console.log(gameNo);
   const question: typeof questionsBank[1] | null = questionsBank[gameNo] ?? null;
   const [selected, setSelected] = useState<string>('');
   const [correct, setCorrect] = useState<AnsweredState>(AnsweredState.None);

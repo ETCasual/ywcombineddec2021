@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
 import { DatabaseProvider, FirestoreProvider, useFirebaseApp } from 'reactfire';
 
+import { AdminPanel } from '@/features/admin/routes/AdminPanel';
 import { Game } from '@/features/game/routes/Game';
 
 const App: React.FC = () => {
@@ -27,6 +28,7 @@ export const AppRoutes: React.FC = () => {
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Game />} />
+          <Route path="/admin" element={<AdminPanel />} />
         </Route>
       </Routes>
     </BrowserRouter>
