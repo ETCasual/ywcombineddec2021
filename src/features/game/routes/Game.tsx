@@ -1,5 +1,6 @@
 import { ref } from '@firebase/database';
 import React from 'react';
+import { useNavigate } from 'react-router';
 import { useDatabase, useDatabaseObjectData } from 'reactfire';
 
 import { CrackedScreen } from '../components/CrackedScreen';
@@ -15,11 +16,18 @@ export type DataType = {
 };
 
 export const Game: React.FC = () => {
+  const navigate = useNavigate();
   const { user } = useGame();
   const dbRef = useDatabase();
 
   const gameRef = ref(dbRef, '/gameNo');
   const { status, data } = useDatabaseObjectData<number>(gameRef);
+
+  const adminAccess = () => {
+    const pw = prompt('Password');
+
+    if (pw === 'douglas2021') navigate('/admin');
+  };
 
   if (status === 'error') throw new Error('Please Enstablish a Secure Connection');
 
@@ -27,6 +35,12 @@ export const Game: React.FC = () => {
     <>
       {data !== 8 ? (
         <VideoBG>
+          <button
+            className="px-2 py-1 rounded-lg top-5 right-10 <md:right-5 bg-[#30ffff] z-3 absolute"
+            onClick={() => adminAccess()}
+          >
+            Admin Access
+          </button>
           {user.name == undefined ? (
             <SignUpForm />
           ) : data ? (

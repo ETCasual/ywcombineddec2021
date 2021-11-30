@@ -28,19 +28,22 @@ export const AdminPanel: React.FC = () => {
 
   return status === 'success' ? (
     <div className="grid lg:grid-cols-3 grid-cols-2 w-[100vw] h-[100vh] gap-3 p-3 text-black text-3xl">
+      <div className="flex text-center col-span-2 w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition items-center justify-center">
+        {'Current Question: ' + JSON.stringify(data, null, 2)}
+      </div>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data <= 0}
         onClick={() => (data !== 0 ? prevQuestion() : null)}
       >
-        Go To Prev
+        Previous Question
       </button>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data >= 8}
         onClick={() => (data !== 8 ? nextQuestion() : null)}
       >
-        Go To Next
+        Next Question
       </button>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
@@ -98,9 +101,6 @@ export const AdminPanel: React.FC = () => {
       >
         Blast
       </button>
-      <div className="flex text-center w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition items-center justify-center">
-        {'Current Question: ' + JSON.stringify(data, null, 2)}
-      </div>
     </div>
   ) : null;
 };
