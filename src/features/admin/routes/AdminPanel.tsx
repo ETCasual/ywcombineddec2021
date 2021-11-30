@@ -48,49 +48,49 @@ export const AdminPanel: React.FC = () => {
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data == 1}
-        onClick={() => (data !== 8 ? gotoQuestion(1) : null)}
+        onClick={() => (data !== 1 ? gotoQuestion(1) : null)}
       >
         Go To 1
       </button>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data == 2}
-        onClick={() => (data !== 8 ? gotoQuestion(2) : null)}
+        onClick={() => (data !== 2 ? gotoQuestion(2) : null)}
       >
         Go To 2
       </button>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data == 3}
-        onClick={() => (data !== 8 ? gotoQuestion(3) : null)}
+        onClick={() => (data !== 3 ? gotoQuestion(3) : null)}
       >
         Go To 3
       </button>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data == 4}
-        onClick={() => (data !== 8 ? gotoQuestion(4) : null)}
+        onClick={() => (data !== 4 ? gotoQuestion(4) : null)}
       >
         Go To 4
       </button>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data == 5}
-        onClick={() => (data !== 8 ? gotoQuestion(5) : null)}
+        onClick={() => (data !== 5 ? gotoQuestion(5) : null)}
       >
         Go To 5
       </button>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data == 6}
-        onClick={() => (data !== 8 ? gotoQuestion(6) : null)}
+        onClick={() => (data !== 6 ? gotoQuestion(6) : null)}
       >
         Go To 6
       </button>
       <button
         className="w-full h-full rounded-xl bg-[#30ffff] hover:bg-[#30cbff] transition"
         disabled={data == 7}
-        onClick={() => (data !== 8 ? gotoQuestion(7) : null)}
+        onClick={() => (data !== 7 ? gotoQuestion(7) : null)}
       >
         Go To 7
       </button>
