@@ -4,7 +4,7 @@ import colors from 'windicss/colors';
 export default defineConfig({
   important: true,
   theme: {
-    fontFamily: { lato: ['Lato', 'sans-serif'] },
+    fontFamily: { lato: ['Lato', 'sans-serif'], noto: ['"Noto Sans SC"', 'sans-serif'] },
     colors: {
       ...colors,
       grey: {
@@ -21,5 +21,7 @@ export default defineConfig({
   },
   shortcuts: {
     text: 'font-lato',
+    chibold: 'font-noto font-bold',
+    chi: 'font-noto',
   },
 });

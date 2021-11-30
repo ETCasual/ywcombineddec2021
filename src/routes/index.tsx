@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
 import { DatabaseProvider, FirestoreProvider, useFirebaseApp } from 'reactfire';
 
-import { Game } from '@/features/intro/routes/Game';
+import { Game } from '@/features/game/routes/Game';
 
 const App: React.FC = () => {
   const app = useFirebaseApp();

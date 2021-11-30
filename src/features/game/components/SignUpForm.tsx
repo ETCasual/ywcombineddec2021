@@ -44,7 +44,7 @@ export const SignUpForm: React.FC = () => {
               )}
             </button>
 
-            <p className="text text-white text-xl  italic">YW Combine</p>
+            <p className="text text-white text-xl  italic">YW - We Are Back!</p>
           </div>
           <div className="mx-auto bg-grey-border w-300px p-3">
             <Field
