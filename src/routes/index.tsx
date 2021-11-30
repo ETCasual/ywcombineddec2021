@@ -26,9 +26,9 @@ export const AppRoutes: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/admin" element={<AdminPanel />} />
         <Route path="/" element={<App />}>
           <Route path="/" element={<Game />} />
-          <Route path="/admin/" element={<AdminPanel />} />
         </Route>
       </Routes>
     </BrowserRouter>
