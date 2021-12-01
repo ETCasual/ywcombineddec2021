@@ -1,13 +1,28 @@
 import { Formik, Form, Field } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import Loader from 'react-loader-spinner';
+import Select from 'react-select';
 import * as Yup from 'yup';
 
 import { useGame } from '@/hooks/useGame';
 
+export const satelliteLocationsSelect = [
+  { value: 'USJ', label: 'USJ' },
+  { value: 'Rawang', label: 'Rawang' },
+  { value: 'SgLong', label: 'SgLong' },
+  { value: 'Kuchai', label: 'Kuchai' },
+  { value: 'Sky', label: 'Sky' },
+  { value: 'Puchong', label: 'Puchong' },
+  { value: 'Setapak', label: 'Setapak' },
+  { value: 'Klang', label: 'Klang' },
+  { value: 'Serdang', label: 'Serdang' },
+];
+
 export const SignUpForm: React.FC = () => {
   const { setInfo } = useGame();
+  const [locationState, setLocationState] = useState<string>('');
+
   return (
     <Formik<{
       name: string;
@@ -26,7 +41,7 @@ export const SignUpForm: React.FC = () => {
       initialValues={{ name: '', cg: '' }}
       onSubmit={async (values) => {
         console.log(values);
-        setInfo(values.name, values.cg);
+        setInfo(values.name, values.cg, locationState);
       }}
     >
       {({ isSubmitting, errors }) => (
@@ -56,7 +71,7 @@ export const SignUpForm: React.FC = () => {
             />
             {errors.name ? <p className="text-sm text-red-600">{errors.name}</p> : null}
           </div>
-          <div className="mx-auto bg-grey-border rounded-b-xl w-300px p-3">
+          <div className="mx-auto bg-grey-border w-300px p-3">
             <Field
               type="text"
               id="cg"
@@ -65,6 +80,17 @@ export const SignUpForm: React.FC = () => {
               placeholder="Your CG..."
             />
             {errors.cg ? <p className="text-sm text-red-600">{errors.cg}</p> : null}
+          </div>
+          <div className="mx-auto bg-grey-border w-300px rounded-b-xl p-3">
+            <Select
+              options={satelliteLocationsSelect}
+              defaultValue={satelliteLocationsSelect[4]}
+              id="location"
+              name="location"
+              className="bg-grey-border"
+              placeholder="Watch Party Location"
+              onChange={(item) => setLocationState(item.value)}
+            />
           </div>
         </Form>
       )}

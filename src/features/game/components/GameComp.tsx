@@ -124,6 +124,57 @@ const questionsBank = {
       },
     ],
   },
+  8: {
+    question: 'Pulau Langkawi 是属于哪一个州？',
+    answers: [
+      {
+        text: 'Perlis',
+        correct: false,
+      },
+      {
+        text: 'Kedah',
+        correct: true,
+      },
+      {
+        text: 'Sabah',
+        correct: false,
+      },
+    ],
+  },
+  9: {
+    question: 'CYC 的第五根柱子是？',
+    answers: [
+      {
+        text: '兴起传承',
+        correct: false,
+      },
+      {
+        text: '尊容保护',
+        correct: true,
+      },
+      {
+        text: '愿做仆人',
+        correct: false,
+      },
+    ],
+  },
+  10: {
+    question: '一个小朋友吃完一块饼干需要两分钟，5个小朋友吃完5块饼干需要多少分钟？',
+    answers: [
+      {
+        text: '10分钟',
+        correct: true,
+      },
+      {
+        text: '25分钟',
+        correct: false,
+      },
+      {
+        text: '50分钟',
+        correct: false,
+      },
+    ],
+  },
 };
 
 enum AnsweredState {

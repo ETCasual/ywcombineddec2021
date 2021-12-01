@@ -1,8 +1,14 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React from 'react';
+import React, { useState } from 'react';
+import Loader from 'react-loader-spinner';
+import TypewriterComponent from 'typewriter-effect';
+
+import { VideoBG } from './VideoBG';
 
 export const CrackedScreen: React.FC = ({ children }) => {
-  return (
+  const [timePassed, setTimePassed] = useState<boolean>(false);
+
+  return timePassed ? (
     <>
       <audio className="w-0 h-0 z-10" autoPlay>
         <source
@@ -21,5 +27,26 @@ export const CrackedScreen: React.FC = ({ children }) => {
         {children}
       </div>
     </>
+  ) : (
+    <VideoBG>
+      <div className="absolute w-full text-center text-2xl self-center text-white z-3 chibold">
+        <div className="mx-auto bg-grey-shade1 rounded-t-xl w-300px relative p-3 flex items-center">
+          <TypewriterComponent
+            onInit={(typewriter) =>
+              typewriter
+                .typeString('问题加载中。。。')
+                .pauseFor(3000)
+                .callFunction(() => setTimePassed(true))
+                .start()
+            }
+          />
+        </div>
+        <div className="mx-auto bg-grey-border rounded-b-xl w-300px p-3">
+          <div className="w-8 h-8 mx-auto my-3 focus-within:outline-none">
+            <Loader type="TailSpin" height="32px" width="32px" color="#30ffff" />
+          </div>
+        </div>
+      </div>
+    </VideoBG>
   );
 };
