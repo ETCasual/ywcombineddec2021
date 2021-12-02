@@ -21,19 +21,19 @@ export const Game: React.FC = () => {
   const dbRef = useDatabase();
 
   const gameRef = ref(dbRef, '/');
-  const { status, data } = useDatabaseObjectData(gameRef);
+  const { status, data } = useDatabaseObjectData<number>(gameRef);
 
   const adminAccess = () => {
     const pw = prompt('Password');
 
-    pw === 'wearebackyw2021' ? navigate('/admin') : alert('Wrong Password');
+    pw === 'douglas2021' ? navigate('/admin') : alert('Wrong Password');
   };
 
   if (status === 'error') throw new Error('Please Enstablish a Secure Connection');
 
   return status === 'success' ? (
     <>
-      {data[user.location] !== 11 ? (
+      {data !== 11 ? (
         <VideoBG>
           <button
             className="px-2 py-1 rounded-lg top-5 right-10 <md:right-5 bg-[#30ffff] z-3 absolute"
@@ -43,8 +43,8 @@ export const Game: React.FC = () => {
           </button>
           {user.name == undefined ? (
             <SignUpForm />
-          ) : data[user.location] ? (
-            <GameComp gameNo={data[user.location]} />
+          ) : data ? (
+            <GameComp gameNo={data} />
           ) : (
             <Waiting />
           )}
