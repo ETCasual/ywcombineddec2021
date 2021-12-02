@@ -20,7 +20,7 @@ export const SignUpForm: React.FC = () => {
           .max(30, 'Only up to 30 characters allowed')
           .required('Required'),
         cg: Yup.string()
-          .min(4, 'At least 4 characters')
+          .min(3, 'At least 3 characters')
           .max(10, 'Only up to 10 characters allowed')
           .required('Required'),
       })}
