@@ -12,8 +12,8 @@ export const CrackedScreen: React.FC = ({ children }) => {
     <>
       <audio className="w-0 h-0 z-10" autoPlay>
         <source
-          src="https://firebasestorage.googleapis.com/v0/b/yw-combined-game.appspot.com/o/bomb.mp3?alt=media&token=3213adbe-89ac-44c0-a631-f7c1df53633d"
-          type="audio/mpeg"
+          src="https://firebasestorage.googleapis.com/v0/b/yw-combined-game.appspot.com/o/Explosion_Blast.wav?alt=media&token=d6e304ab-46cf-4cb6-b8c6-2b8a45cf23ca"
+          type="audio/wav"
         />
         Your browser does not support the audio element.
       </audio>
